@@ -1,0 +1,36 @@
+{
+  "description": "Security audit profile — Ghidra for binary analysis and Snyk for vulnerability scanning",
+  "mcpServers": {
+    "snyk": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-snyk"],
+      "env": {
+        "SNYK_TOKEN": "${SNYK_TOKEN}"
+      },
+      "description": "Scan dependencies and code for vulnerabilities — CVE matching, license compliance, remediation advice"
+    },
+    "ghidra": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-ghidra"],
+      "description": "Binary analysis and reverse engineering — decompile binaries, analyze security properties"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Read source files for security review — scan for hardcoded secrets, insecure patterns"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch CVE databases, OWASP references, and security advisories"
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "description": "Search for security advisories, CVEs, and known exploits for packages in use"
+    }
+  }
+}

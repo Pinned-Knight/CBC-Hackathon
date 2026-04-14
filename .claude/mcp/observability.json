@@ -1,0 +1,34 @@
+{
+  "description": "Observability profile — tracing, evaluation, and cost tracking for monitoring agents and application performance",
+  "mcpServers": {
+    "sentry": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      },
+      "description": "Query Sentry for error rates, performance traces, and release health"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch metrics from monitoring endpoints — health checks, Prometheus, Grafana APIs"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"],
+      "description": "Query application database for performance metrics, slow query logs, and pg_stat_statements"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Read and write observability configuration — dashboards, alert rules, sampling configs"
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Track agent execution costs, token usage, and performance baselines across runs"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "description": "Frontend development profile — Puppeteer, Figma, Storybook",
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+      "description": "Browser automation — screenshot components, verify layouts, run visual tests"
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-figma"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_ACCESS_TOKEN}"
+      },
+      "description": "Read Figma designs — extract components, colors, typography, spacing tokens"
+    },
+    "storybook": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-storybook"],
+      "env": {
+        "STORYBOOK_URL": "${STORYBOOK_URL}"
+      },
+      "description": "Interact with Storybook — list components, read stories, trigger visual tests"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./src"],
+      "description": "Read and write frontend source files"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch component library docs, CSS references, design system documentation"
+    }
+  }
+}

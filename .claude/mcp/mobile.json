@@ -1,0 +1,33 @@
+{
+  "description": "Mobile development profile — Android ADB and Xcode tools for mobile app development and testing",
+  "mcpServers": {
+    "android-adb": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-android-adb"],
+      "description": "Control Android devices/emulators — install APKs, run tests, capture screenshots, view logs"
+    },
+    "xcode": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-xcode"],
+      "description": "Build, run, and test iOS apps — manage simulators, run XCTest suites, capture screenshots"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Read and write React Native / Expo source files"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch React Native and Expo documentation"
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "Manage mobile app repository — create release branches, upload build artifacts"
+    }
+  }
+}

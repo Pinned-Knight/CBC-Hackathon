@@ -1,0 +1,34 @@
+{
+  "description": "Data science profile — Jupyter notebooks, SQLite, and PostgreSQL for data analysis and ML workflows",
+  "mcpServers": {
+    "jupyter": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-jupyter"],
+      "env": {
+        "JUPYTER_SERVER_URL": "${JUPYTER_URL}",
+        "JUPYTER_TOKEN": "${JUPYTER_TOKEN}"
+      },
+      "description": "Create and execute Jupyter notebooks — run Python cells, visualize data, iterate on analysis"
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "${SQLITE_DB_PATH}"],
+      "description": "Query SQLite databases — exploratory data analysis, local datasets"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"],
+      "description": "Query PostgreSQL for production data analysis, aggregate reporting"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Read datasets (CSV, JSON), write analysis outputs and model artifacts"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch datasets from public APIs, download CSV/JSON data sources"
+    }
+  }
+}

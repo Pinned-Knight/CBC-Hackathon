@@ -1,0 +1,28 @@
+{
+  "description": "Design profile — Figma and Blender for UI design and 3D asset generation",
+  "mcpServers": {
+    "figma": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-figma"],
+      "env": {
+        "FIGMA_ACCESS_TOKEN": "${FIGMA_ACCESS_TOKEN}"
+      },
+      "description": "Read Figma files — extract design tokens, component specs, layout measurements, and assets"
+    },
+    "blender": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-blender"],
+      "description": "Generate and manipulate 3D assets — for applications requiring 3D visualization"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./public/assets"],
+      "description": "Write design assets (SVGs, icons, images) to the public directory"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch design references, style guides, and inspiration from the web"
+    }
+  }
+}

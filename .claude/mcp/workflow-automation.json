@@ -1,0 +1,32 @@
+{
+  "description": "Workflow automation profile — n8n, Pipedream for connecting services and automating pipelines",
+  "mcpServers": {
+    "n8n": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-n8n"],
+      "env": {
+        "N8N_HOST": "${N8N_HOST}",
+        "N8N_API_KEY": "${N8N_API_KEY}"
+      },
+      "description": "Create and manage n8n workflows — automate data flows between services"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."],
+      "description": "Read generated code and write workflow configuration files"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "description": "Fetch API documentation for services being integrated"
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "Create webhook triggers in GitHub repos for CI/CD workflows"
+    }
+  }
+}
